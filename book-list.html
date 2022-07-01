@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Editura UAIC</title>
+</head>
+<body>
+  
+  <div class="container">
+    
+    <header>
+      <nav id="mainNav">
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-book-open fa-xl"></i>
+            Editura UAIC
+          </a>
+          <div class="userNav">
+            <a href="#">
+              <i class="fa-solid fa-cart-shopping"></i>
+              Cosul meu
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-circle-user"></i>
+              Inregistrare
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              Contul meu
+            </a>
+          </div>
+        </div>
+      </nav>
+      <nav id="secondaryNav">
+        <ul class="menu">
+          <li>
+            <a href="index.html" class="link">Aparitii recente</a>
+          </li>
+          <!-- js: create menu -->
+        </ul>
+      </nav>
+      <section id="search">
+        <form id="searchForm" class="search" action="book-list.html" method="get">
+          <input type="text" name="search" id="searchInput" placeholder="cauta o carte dupa domeniu, subdomeniu sau anul aparitiei" />
+          <input type="submit" id="searchBtn" value="Cauta" />
+        </form>
+      </section>
+    </header>
+
+    <section id="main">  
+      <div class="books-list-container">
+        <aside id="leftCol">
+          <h4>
+            <span>Filtre disponibile</span>
+          </h4>
+          <div id="filters">
+            <ul id="domeniu">
+              <li class="displayFlex">
+                <h4>Domenii</h4>
+                <i class="fa-solid fa-circle-chevron-up"></i>
+              </li>
+              <li>
+                <ul class="available-filters">
+                  <!-- js: create available filters for this category -->
+                </ul>
+              </li>
+            </ul>
+            <ul id="subdomeniu">
+              <li class="displayFlex">
+                <h4>Subdomenii</h4>
+                <i class="fa-solid fa-circle-chevron-up"></i>
+              </li>
+              <li>
+                <ul class="available-filters">
+                  <!-- js: create available filters for this category -->
+                </ul>
+              </li>
+            </ul>
+            <ul id="aparitie">
+              <li class="displayFlex">
+                <h4>Ani aparitie</h4>
+                <i class="fa-solid fa-circle-chevron-up"></i>
+              </li>
+              <li>
+                <ul class="available-filters">
+                  <!-- js: create available filters for this category -->
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <form id="filterForm" action="book-list.html" method="get">
+            <input type="text" name="filter" id="filterInput" />
+          </form>
+        </aside>
+        <div id="rightCol">
+          <h2 id="booksCounter"></h2>
+          <p>Ordoneaza dupa:</p>
+          <select name="sortByPrice" id="sortByPrice">
+            <option value="" disabled selected>Alege o optiune</option>
+            <option value="0">Pret crescator</option>
+            <option value="1">Pret descrescator</option>
+          </select>
+          <div id="booksListGrid">
+            <!-- js: display books -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="nav-container">
+        <span id="copyright"></span>
+        <a href="#">Contact</a>
+      </div>
+    </footer>
+    
+  </div>
+
+  <script src="js/db.js"></script>
+  <script src="js/secondaryNav.js"></script>
+  <script src="js/book-list-functions.js"></script>
+  <script src="js/book-list.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>

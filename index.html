@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Editura UAIC</title>
+</head>
+<body>
+  
+  <div class="container">
+    
+    <header>
+      <nav id="mainNav">
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-book-open fa-xl"></i>
+            Editura UAIC
+          </a>
+          <div class="userNav">
+            <a href="#">
+              <i class="fa-solid fa-cart-shopping"></i>
+              Cosul meu
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-circle-user"></i>
+              Inregistrare
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              Contul meu
+            </a>
+          </div>
+        </div>
+      </nav>
+      <nav id="secondaryNav">
+        <ul class="menu">
+          <li>
+            <a href="index.html" class="link">Aparitii recente</a>
+          </li>
+          <!-- js: create menu -->
+        </ul>
+      </nav>
+
+      <section id="firstHero">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, cumque.</h2>
+        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, necessitatibus.</h3>
+        <form id="searchForm" class="search" action="book-list.html" method="get">
+          <input type="text" name="search" id="searchStr" placeholder="cauta o carte dupa domeniu, subdomeniu sau anul aparitiei" />
+          <input type="submit" id="searchBtn" value="Cauta" />
+        </form>
+      </section>
+    </header>
+
+    <section id="carousel">
+      <h2 class="section-title">
+        Lansari de carte BookFest 2022
+      </h2>
+      <div class="carousel-container">
+        <button id="carouselLeftBtn">
+          <i class="fa-solid fa-chevron-left fa-3x"></i>
+        </button>
+        <div class="carousel">
+          <div class="banner-container" id="banners">
+            <a href="book-list.html?category=stiinte+sociale">
+              <img src="img/carousel/filosofie1.jpg" alt="filosofie">
+            </a>
+            <a href="book-list.html?category=istorie">
+              <img src="img/carousel/istorie1.jpg" alt="istorie">
+            </a>
+            <a href="book-list.html?category=economie">
+              <img src="img/carousel/economie1.jpg" alt="economie">
+            </a>
+          </div>
+        </div>
+        <button id="carouselRightBtn">
+          <i class="fa-solid fa-chevron-right fa-3x"></i>
+        </button>
+      </div>
+    </section>
+    
+    <section id="secondHero">
+      <h2>Rerum libero explicabo dolorem adipisci.</h2>
+      <h2>Ipsam fugit odit soluta eveniet rem quod modi numquam illo.</h2>
+      <form id="" class="" action="" method="get">
+        <input type="submit" id="" value="Vezi toate reducerile" />
+      </form>
+    </section>
+
+    <section id="main">
+      <h2 class="section-title">
+        Aparitii recente la Editura UAIC
+      </h2>
+      <div id="booksHomeGrid">
+        <!-- js: display books -->
+      </div>
+    </section>
+
+    <footer>
+      <div class="nav-container">
+        <span id="copyright"></span>
+        <a href="#">Contact</a>
+      </div>
+    </footer>
+    
+  </div>
+
+  <script src="js/db.js"></script>
+  <script src="js/secondaryNav.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>

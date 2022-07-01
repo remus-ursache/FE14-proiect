@@ -1,0 +1,84 @@
+.book-card {
+  width: 100%;
+  border: 1px solid var(--primary-25);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.book-card .card-header {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.card-header img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border-bottom: 1px solid var(--primary-25);
+}
+
+.card-header .card-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 360px;
+  background: var(--primary-75);
+  transition: bottom .4s ease-in-out;
+  padding: 2rem;
+}
+
+.card-overlay a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  padding: .5rem;
+  text-align: center;
+}
+
+.card-overlay a#viewDetails {
+  border: 1px solid var(--success-100);
+  background-color: var(--primary-100);
+  color: var(--success-100);
+  margin-bottom: 2rem;
+}
+
+.card-overlay a#addToCart {
+  background: var(--success-100);
+  color: var(--light-100);
+}
+
+.book-card:hover .card-header .card-overlay {
+  bottom: 0;
+}
+
+.book-card small {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--success-100);
+  font-weight: 600;
+  padding: 0 20px;
+}
+
+.book-card h4 {
+  color: var(--primary-100);
+  padding: 0 20px;
+}
+
+.book-card p {
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.book-card h3 {
+  color: var(--danger-100);
+  margin: auto 0 10px;
+  padding: 0 20px;
+}

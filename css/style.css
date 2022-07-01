@@ -1,0 +1,215 @@
+@import 'utility.css';
+@import 'top-nav.css';
+@import 'search.css';
+@import 'book-card.css';
+
+section .section-title {
+  font-weight: 300;
+  color: var(--primary-100);
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 10px;
+}
+
+#firstHero {
+  height: 350px;
+  background-image: linear-gradient(var(--primary-50), var(--primary-50)), url(../img/hero/first-hero-6-copy.jpg); 
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#firstHero h2, #firstHero h3 {
+  color: var(--light-100);
+  font-weight: 300;
+}
+
+#firstHero h3 {
+  margin: 40px 0 20px;
+}
+
+#secondHero {
+  height: 250px;
+  background-image: linear-gradient(var(--primary-75), var(--primary-75)), url(../img/hero/first-hero-4-copy.jpg); 
+  background-repeat: no-repeat; 
+  background-position: center bottom;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#secondHero h2 {
+  color: var(--light-100);
+  font-weight: 300;
+}
+
+#secondHero h2:last-of-type {
+  margin-bottom: 40px;
+}
+
+#secondHero input {
+  border: 1px solid var(--light-100);
+  background: var(--primary-75);
+  color: var(--light-100);
+  font-weight: 500;
+  padding: .75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#carousel::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+
+.carousel {
+  overflow: hidden;
+  height: 270px;
+  width: 900px;
+  box-shadow: 0 0 10px var(--primary-50);
+  margin: 0 .5rem;
+
+}
+
+.carousel .banner-container {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel a {
+  display: block;
+}
+
+.carousel img {
+  width: 900px;
+  height: 270px;
+  object-fit: cover;
+}
+
+.carousel-container button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-container button:hover i {
+  color: var(--primary-50);
+}
+
+.carousel-container button i {
+  color: var(--primary-25);
+}
+
+#booksHomeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 900px;
+  margin: 0 auto;
+}
+
+section#search {
+  background: var(--light-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.books-list-container {
+  display: flex;
+  column-gap: 20px;
+  align-items: flex-start;
+}
+
+.books-list-container aside#leftCol {
+  width: 25%;
+  background: var(--light-100);
+  padding: 10px;
+}
+
+.books-list-container div#rightCol {
+  width: 75%;
+}
+
+.books-list-container #booksListGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.books-list-container #booksCounter {
+  font-weight: 300;
+  color: var(--primary-100);
+  margin-bottom: 20px;
+}
+
+.books-list-container #booksCounter span {
+  color: var(--success-100);
+  font-weight: 500;
+}
+
+.books-list-container p {
+  font-size: .9rem;
+  margin-bottom: 5px;
+  color: var(--dark-100);
+}
+
+.books-list-container select {
+  background-color: #fff;
+  border: 1px solid var(--dark-100);
+  padding: .25rem;
+  font-size: .9rem;
+  margin-bottom: 20px;
+  color: var(--dark-100);
+}
+
+aside#leftCol ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+aside#leftCol #filters > ul {
+  margin-top: 1.5rem;
+}
+
+aside#leftCol #filters > ul > li:first-child {
+  color: var(--secondary-100);
+}
+
+aside#leftCol #filters .available-filters li:first-child {
+  margin-top: 0;
+}
+
+aside#leftCol li {
+  align-items: center;
+  margin-top: .75rem;
+  color: var(--primary-100);
+}
+
+aside#leftCol li input {
+  margin-right: .5rem;
+}
+
+aside#leftCol li span, aside#leftCol li i {
+  margin-left: auto;
+}
+
+form#filterForm {
+  display: none;
+}

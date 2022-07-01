@@ -1,0 +1,92 @@
+#mainNav, footer {
+  padding: 1rem 2rem;
+  background: var(--primary-100);
+}
+
+#mainNav .nav-container, footer .nav-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 900px;
+}
+
+#mainNav a, footer a, footer span {
+  color: var(--primary-light-100);
+  font-size: 1rem;
+  display: inline-block;
+}
+
+#mainNav a.logo {
+  font-size: 1.1rem;
+}
+
+#mainNav .userNav a {
+  margin-left: 1rem;
+}
+
+#secondaryNav {
+  padding: 0 2rem;
+  border-bottom: 2px solid var(--secondary-50);
+}
+
+#secondaryNav ul {
+  list-style-type: none;
+}
+
+#secondaryNav a {
+  text-decoration: none;
+  color: var(--primary-100);
+  white-space: nowrap;
+  display: inline-block;
+  padding: 1.25rem 0;
+}
+
+#secondaryNav a:hover {
+  color: var(--success-100);
+}
+
+#secondaryNav ul.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 900px;
+  margin: 0 auto;
+}
+
+#secondaryNav ul.menu > li {
+  position: relative;
+}
+
+#secondaryNav ul.menu > li:hover ul.submenu {
+  display: block;
+}
+
+#secondaryNav ul.menu > li:hover > a {
+  color: var(--success-100);
+}
+
+#secondaryNav ul.submenu {
+  position: absolute;
+  background: #fff;
+  border-top: 2px solid var(--success-100);
+  top: 100%;
+  box-shadow: 1px 1px 3px var(--secondary-50);
+  display: none;
+  padding-top: .5rem;
+}
+
+#secondaryNav ul.submenu li.submenu-last-item {
+  border-top: 1px solid var(--secondary-50);
+  margin-top: .5rem;
+  padding: 0.25rem 0;
+}
+
+#secondaryNav ul.submenu li a:hover {
+  border-left: 3px solid var(--success-100);
+}
+
+#secondaryNav ul.submenu li a {
+  margin: .5rem 0;
+  width: 100%;
+  padding: 0 2rem;
+  border-left: 3px solid transparent;
+}

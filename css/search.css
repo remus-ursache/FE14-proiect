@@ -1,0 +1,30 @@
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search input {
+  font-size: 1rem;
+}
+
+.search input:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.search input[type=text] {
+  border: 1px solid var(--primary-50);
+  width: 50%;
+  margin-right: .5rem;
+  padding: .5rem 1rem;
+  color: var(--secondary-100);
+}
+
+.search input[type=submit] {
+  border: 1px solid var(--success-100);
+  background: var(--success-100);
+  color: var(--light-100);
+  font-weight: 500;
+  padding: .5rem 1.5rem;
+}
