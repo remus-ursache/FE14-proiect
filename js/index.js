@@ -1,6 +1,6 @@
 // UI Elements
 const banners = document.getElementById('banners');
-const banner = document.querySelectorAll('#banners img');
+const banner = document.querySelectorAll('#banners a');
 const carouselLeftBtn = document.getElementById('carouselLeftBtn');
 const carouselRightBtn = document.getElementById('carouselRightBtn');
 const booksGrid = document.getElementById('booksHomeGrid');
@@ -31,40 +31,44 @@ const displayBook = book => {
 }
 
 // Display main content
-let carouselIndex = 0;
-let slideInterval = setInterval(run, 5000);
 
-function run() {
-  carouselIndex++;
+// Carousel
+let bannerIndex = 0;
+
+const run = () => {
+  bannerIndex++;
   changeBanner();
 }
 
-function changeBanner() {
-  if (carouselIndex > banner.length - 1) {
-    carouselIndex = 0;
-  } else if (carouselIndex < 0) {
-    carouselIndex = banner.length - 1;
+const changeBanner = () => {
+  if (bannerIndex > banner.length - 1) {
+    bannerIndex = 0;
+  } else if (bannerIndex < 0) {
+    bannerIndex = banner.length - 1;
   }
-  banners.style.transform = `translateX(${-carouselIndex * 900}px)`;
+  banners.style.transform = `translateX(${-bannerIndex * 900}px)`;
 }
 
-const resetInterval = () => {
-  clearInterval(slideInterval);
-  slideInterval = setInterval(run, 5000);
+let carousel = setInterval(run, 5000);
+
+const resetCarousel = () => {
+  clearInterval(carousel);
+  carousel = setInterval(run, 5000);
 }
 
 carouselLeftBtn.addEventListener('click', () => {
-  carouselIndex--;
+  bannerIndex--;
   changeBanner();
-  resetInterval();
+  resetCarousel();
 });
 
 carouselRightBtn.addEventListener('click', () => {
-  carouselIndex++;
+  bannerIndex++;
   changeBanner();
-  resetInterval();
+  resetCarousel();
 });
 
+// Books
 dbBooks
   .sort((a,b) => b.id - a.id)
   .forEach((book,index) => (index < 9) ? displayBook(book) : null);
