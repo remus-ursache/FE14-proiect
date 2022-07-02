@@ -54,8 +54,10 @@ secondaryNav.forEach(menu => displaySecondaryNavMenu(menu));
 
 const secondaryNavLinks = [...document.querySelectorAll('#secondaryNav a')];
 const selectedLink = secondaryNavLinks.filter(link => this.location.href === link.href);
-if (selectedLink[0].closest('ul.submenu') === null) {
-  selectedLink[0].style.color = 'var(--success-100)';
-} else {
-  selectedLink[0].closest('ul.submenu').previousElementSibling.style.color = 'var(--success-100)';
+if (selectedLink.length) {
+  if (selectedLink[0].closest('ul.submenu') === null) {
+    selectedLink[0].style.color = 'var(--success-100)';
+  } else {
+    selectedLink[0].closest('ul.submenu').previousElementSibling.style.color = 'var(--success-100)';
+  }
 }

@@ -55,7 +55,6 @@ if (isValidSearch(urlQuery) || isValidCategory(urlQuery)) {
     const componentArr = component.split('/');
     urlQueryComponents[componentArr[0]] = componentArr[1];
   });
-  console.log(urlQueryComponents);
 
   const type = (urlQueryComponents.search !== undefined) ? 'search' : 'category';
   const searchValue = urlQueryComponents.search ?? urlQueryComponents.category;
