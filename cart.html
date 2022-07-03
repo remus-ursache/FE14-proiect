@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <title>Editura UAIC</title>
+</head>
+<body>
+  
+  <div class="container">
+    
+    <header>
+      <nav id="mainNav">
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-book-open fa-xl"></i>
+            Editura UAIC
+          </a>
+          <div class="userNav">
+            <a href="cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              Cosul meu
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-circle-user"></i>
+              Inregistrare
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              Contul meu
+            </a>
+          </div>
+        </div>
+      </nav>
+      <nav id="secondaryNav">
+        <ul class="menu">
+          <li>
+            <a href="index.html" class="link">Aparitii recente</a>
+          </li>
+          <!-- js: create menu -->
+        </ul>
+      </nav>
+    </header>
+
+    <section id="checkout">
+      <div class="checkout-container">
+
+        <div id="leftCol">
+          <h2 class="checkout-title">Comanda dvs</h2>
+          
+          <h3 class="checkout-subtitle">Info cumparator</h3>
+          <ul id="infoBuyer">
+            <li>
+              <label for="name">Nume</label>
+              <input type="text" id="name">
+            </li>
+            <li>
+              <label for="email">Email</label>
+              <input type="text" id="email">
+            </li>
+            <li>
+              <label for="phone">Telefon</label>
+              <input type="text" id="phone">
+            </li>
+          </ul>
+          
+          <h3 class="checkout-subtitle">Info livrare</h3>
+          <ul id="infoShiping">
+            <li>
+              <label for="address">Adresa</label>
+              <input type="text" id="address">
+            </li>
+            <li>
+              <label for="postalCode">Cod postal</label>
+              <input type="text" id="postalCode">
+            </li>
+            <li>
+              <label for="city">Localitate</label>
+              <input type="text" id="city">
+            </li>
+            <li>
+              <label for="county">Judet</label>
+              <input type="text" id="county">
+            </li>
+          </ul>
+
+          <h3 class="checkout-subtitle">Info plata</h3>
+          <ul id="infoPayment">
+            <li>
+              <label for="cardNumber">Numar card</label>
+              <input type="text" id="cardNumber">
+            </li>
+            <li>
+              <label for="cardExpire">Expirare card</label>
+              <input type="text" id="cardExpire">
+            </li>
+            <li>
+              <label for="cardCSV">CSV</label>
+              <input type="text" id="cardCSV">
+            </li>
+          </ul>
+        </div>
+        
+        <aside id="rightCol">
+          <h2 class="checkout-subtitle-empty-cart">Cosul este gol!</h2>
+          <ul class="displayNone" id="cartProducts">
+            <li>
+              <span id="productName">Produs 1</span>
+              <div>
+                <span id="productQuantity">&times; 1</span>
+                <span id="productTotal">100 Lei</span>
+              </div>
+            </li>
+            <li>
+              <span id="productName">Produs 2</span>
+              <div>
+                <span id="productQuantity">&times; 5</span>
+                <span id="productTotal">125 Lei</span>
+              </div>
+            </li>
+            <li>
+              <span id="productName">Produs 3</span>
+              <div>
+                <span id="productQuantity">&times; 2</span>
+                <span id="productTotal">32 Lei</span>
+              </div>
+            </li>
+          </ul>
+          <ul id="cartTotal">
+            <li>
+              <span>Total</span>
+              <span id="cartTotal">0 Lei</span>
+            </li>
+            <li>
+              <span>Transport</span>
+              <span id="cartShipment">0 Lei</span>
+            </li>
+            <li>
+              <span>TVA (inclus)</span>
+              <span id="cartVAT">0 Lei</span>
+            </li>
+            <li>
+              <span>Total comanda</span>
+              <span id="orderTotal">0 Lei</span>
+            </li>
+          </ul>
+          <button id="payOrderBtn">Plateste produsele</button>
+        </aside>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="nav-container">
+        <span id="copyright"></span>
+        <a href="#">Contact</a>
+      </div>
+    </footer>
+    
+  </div>
+
+  <script src="js/db.js"></script>
+  <script src="js/secondaryNav.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>

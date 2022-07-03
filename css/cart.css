@@ -1,0 +1,127 @@
+@import 'utility.css';
+@import 'top-nav.css';
+
+#secondaryNav {
+  background: var(--white-100);
+}
+
+.container {
+  background: transparent;
+}
+
+#checkout .checkout-container {
+  display: flex;
+  column-gap: 20px;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 40px;
+  color: var(--primary-100);
+}
+
+.checkout-container .checkout-title {
+  font-weight: 300;
+  color: var(--success-100);
+}
+
+.checkout-container .checkout-subtitle {
+  font-weight: 300;
+  margin: 40px 0 20px;
+  color: var(--primary-100);
+}
+
+.checkout-container .checkout-subtitle-empty-cart {
+  font-weight: 300;
+  color: var(--danger-100);
+}
+
+.checkout-container div#leftCol {
+  max-width: 520px;
+  flex-shrink: 0;
+  background: var(--white-100);
+  padding: 20px;
+}
+
+#leftCol ul#infoBuyer, #leftCol ul#infoShiping, #leftCol ul#infoPayment {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-content: start;
+}
+
+#infoShiping li:first-child, #infoPayment li:first-child {
+  grid-column: 1 / span 2;
+}
+
+#leftCol label, #leftCol input {
+  display: block;
+  width: 100%;
+}
+
+#leftCol input {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+#leftCol label {
+  margin-bottom: 5px;
+}
+
+.checkout-container aside#rightCol {
+  background: var(--white-100);
+  flex-grow: 1;
+  padding: 20px;
+}
+
+#rightCol .checkout-subtitle {
+  margin: 0 0 20px;
+}
+
+#rightCol .checkout-subtitle-empty-cart {
+  margin: 0 0 40px;
+}
+
+#rightCol ul {
+  margin-bottom: 30px;
+}
+
+#rightCol ul:first-of-type {
+  margin-top: 40px;
+}
+
+#rightCol li {
+  margin-bottom: 10px;
+}
+
+#rightCol span {
+  display: block;
+}
+
+#rightCol span:last-child {
+  margin-left: auto;
+  font-weight: 500;
+}
+
+#rightCol ul#cartProducts li div, #rightCol ul#cartTotal li {
+  display: flex;
+}
+
+#rightCol ul#cartProducts li > span {
+  font-weight: 300;
+}
+
+#rightCol ul#cartTotal li:last-child span:last-child {
+  font-weight: 600;
+  color: var(--danger-100);
+}
+
+#rightCol button#payOrderBtn {
+  border: 1px solid var(--success-100);
+  color: var(--light-100);
+  background: var(--success-100);
+  font-weight: 300;
+  font-size: 1.1rem;
+  padding: .5rem 1.5rem;
+  width: 100%;
+  display: block;
+}
