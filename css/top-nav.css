@@ -24,6 +24,24 @@
   margin-left: 1rem;
 }
 
+#mainNav .userNav a:first-child {
+  position: relative;
+}
+
+#mainNav .userNav a:first-child span {
+  position: absolute;
+  top: -5px;
+  left: -12px;
+  display: block;
+  color: var(--white-100);
+  font-weight: 600;
+  padding: 0 5px;
+  background: var(--danger-100);
+  border-radius: 50%;
+  font-size: .8rem;
+
+}
+
 #secondaryNav {
   padding: 0 2rem;
   border-bottom: 2px solid var(--secondary-50);
