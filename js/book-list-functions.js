@@ -41,7 +41,7 @@ const displayBook = book => {
       <div class="card-header">
         <img src="img/${book.id}.jpg" />
         <div class="card-overlay">
-          <a href="" id="viewDetails">
+          <a href="book.html?id=${book.id}" id="viewDetails">
             Info carte
           </a>
           <a href="" id="addToCart">

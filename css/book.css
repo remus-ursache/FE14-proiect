@@ -1,0 +1,131 @@
+@import 'utility.css';
+@import 'top-nav.css';
+@import 'search.css';
+@import 'book-card.css';
+
+section#search {
+  background: var(--light-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.book-container {
+  display: flex;
+  column-gap: 40px;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#leftCol {
+  max-width: 520px;
+}
+
+#leftCol .imgs {
+  display: flex;
+  justify-content: space-between;
+  height: 430px;
+}
+
+.imgs #fullImg {
+  width: 290px;
+  height: 430px;
+  object-fit: cover;
+  border: 1px solid var(--primary-25);
+  margin-right: 20px;
+}
+
+.imgs #thumbnails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-content: start;
+}
+
+#thumbnails li {
+  height: 100px;
+  width: 100px;
+  border: 1px solid var(--primary-25);
+}
+
+#thumbnails img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+#leftCol #infoTitle {
+  font-weight: 300;
+  margin: 40px 0 10px;
+}
+
+#leftCol #infoDetails {
+  text-align: justify;
+  font-weight: 300;
+  line-height: 1.65rem;
+}
+
+.book-container ul#rightCol {
+  border: 1px solid var(--primary-25);
+  flex-grow: 1;
+}
+
+#rightCol li {
+  padding: 20px;
+}
+
+#rightCol li:not(li:first-child) {
+  border-top: 1px solid var(--primary-25);
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+#rightCol #bookTitle, #rightCol li:not(li:first-child) h3 {
+  font-weight: 300;
+  color: var(--primary-100);
+}
+
+#rightCol #bookAuthors {
+  font-weight: 300;
+  color: var(--success-100);
+}
+
+#rightCol li:first-child div {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+}
+
+#rightCol #bookPrice {
+  color: var(--danger-100);
+  font-weight: bold;
+  margin-right: auto;
+}
+
+#quantityMinus, #quantityPlus {
+  border: 1px solid var(--primary-25);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#bookQuantity {
+  padding: 5px 20px;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid var(--primary-25);
+  border-bottom: 1px solid var(--primary-25);
+}
+
+#rightCol #addToCart {
+  border: 1px solid var(--success-100);
+  color: var(--light-100);
+  background: var(--success-100);
+  font-weight: 300;
+  font-size: 1.1rem;
+  padding: .5rem 1.5rem;
+  width: 100%;
+  display: block;
+}
