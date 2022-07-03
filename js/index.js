@@ -16,7 +16,7 @@ const displayBook = book => {
           <a href="book.html?id=${book.id}" id="viewDetails">
             Info carte
           </a>
-          <a href="" id="addToCart">
+          <a href="" id="addToCart" data-id="${book.id}">
             Adauga in cos
           </a>
         </div>
