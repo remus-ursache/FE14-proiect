@@ -62,3 +62,7 @@ section#main {
 .displayFlex {
   display: flex;
 }
+
+.displayBlock {
+  display: block;
+}

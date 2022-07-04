@@ -71,7 +71,7 @@
           </ul>
           
           <h3 class="checkout-subtitle">Info livrare</h3>
-          <ul id="infoShiping">
+          <ul id="infoShipment">
             <li>
               <label for="address">Adresa</label>
               <input type="text" id="address">
@@ -108,31 +108,10 @@
         </div>
         
         <aside id="rightCol">
-          <h2 class="checkout-subtitle-empty-cart">Cosul este gol!</h2>
-          <ul class="displayNone" id="cartProducts">
-            <li>
-              <span id="productName">Produs 1</span>
-              <div>
-                <span id="productQuantity">&times; 1</span>
-                <span id="productTotal">100 Lei</span>
-              </div>
-            </li>
-            <li>
-              <span id="productName">Produs 2</span>
-              <div>
-                <span id="productQuantity">&times; 5</span>
-                <span id="productTotal">125 Lei</span>
-              </div>
-            </li>
-            <li>
-              <span id="productName">Produs 3</span>
-              <div>
-                <span id="productQuantity">&times; 2</span>
-                <span id="productTotal">32 Lei</span>
-              </div>
-            </li>
+          <h2 id="cartState" class="checkout-subtitle-empty-cart">Cosul este gol!</h2>
+          <ul class="displayNone" id="products">
           </ul>
-          <ul id="cartTotal">
+          <ul id="total">
             <li>
               <span>Total</span>
               <span id="cartTotal">0 Lei</span>
@@ -168,5 +147,7 @@
   <script src="js/db.js"></script>
   <script src="js/secondaryNav.js"></script>
   <script src="js/footer.js"></script>
+  <script src="js/cart-order.js"></script>
+  
 </body>
 </html>

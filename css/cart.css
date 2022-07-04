@@ -42,7 +42,7 @@
   padding: 20px;
 }
 
-#leftCol ul#infoBuyer, #leftCol ul#infoShiping, #leftCol ul#infoPayment {
+#leftCol ul#infoBuyer, #leftCol ul#infoShipment, #leftCol ul#infoPayment {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
@@ -61,6 +61,7 @@
 #leftCol input {
   padding: 5px;
   font-size: 1rem;
+  color: var(--primary-75);
 }
 
 #leftCol label {
@@ -102,15 +103,30 @@
   font-weight: 500;
 }
 
-#rightCol ul#cartProducts li div, #rightCol ul#cartTotal li {
+#rightCol ul#products li div, #rightCol ul#total li {
   display: flex;
 }
 
-#rightCol ul#cartProducts li > span {
+#rightCol ul#products {
+  border-bottom: 1px solid var(--primary-25);
+}
+
+#rightCol ul#products li:last-child {
+  margin-bottom: 20px;
+}
+
+#rightCol ul#products li > span {
   font-weight: 300;
 }
 
-#rightCol ul#cartTotal li:last-child span:last-child {
+#rightCol ul#total li:last-child {
+  border-top: 1px solid var(--primary-25);
+  margin-top: 15px;
+  padding-top: 15px;
+  font-size: 1.1rem;
+}
+
+#rightCol ul#total li:last-child span:last-child {
   font-weight: 600;
   color: var(--danger-100);
 }
