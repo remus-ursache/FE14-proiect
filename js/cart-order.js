@@ -1,7 +1,7 @@
 const cartState = document.getElementById('cartState');
 const products = document.getElementById('products');
 const productTotal = document.getElementById('productTotal');
-const autofillInputs = [...document.querySelectorAll('#infoBuyer input')].concat([...document.querySelectorAll('#infoShipment input')]);
+const autofillInputs = [...document.querySelectorAll('#infoBuyer input, #infoShipment input')];
 
 
 const displayCartProduct = item => {
@@ -39,7 +39,7 @@ if (cart) {
   cartVAT = cartTotal * 0.09;
   orderTotal = cartTotal + cartShipment;
 
-  autofillInputs.forEach(input => input.value = testUser[input.getAttribute('id')]);
+  autofillInputs.forEach(input => input.value = testUser[input.id]);
   
   products.classList.replace('displayNone','displayBlock');
   cartState.classList.replace('checkout-subtitle-empty-cart','checkout-subtitle');
