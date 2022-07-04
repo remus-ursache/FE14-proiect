@@ -32,8 +32,8 @@ if (isValidId(urlQuery)) {
   bookTitle.textContent = book.titlu;
   bookAuthors.textContent = book.autori;
   bookPrice.textContent = `${book.pret} Lei`;
-
   infoDetails.textContent = book.info;
+  addToCart.setAttribute('data-id',book.id);
 
   // Event: decrease quantity
   quantityMinus.addEventListener('click', () => {

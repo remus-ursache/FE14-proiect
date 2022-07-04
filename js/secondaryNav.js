@@ -61,3 +61,9 @@ if (selectedLink.length) {
     selectedLink[0].closest('ul.submenu').previousElementSibling.style.color = 'var(--success-100)';
   }
 }
+
+// Display cart
+if (localStorage.getItem('cart') && document.getElementById('cartBadge').classList.contains('displayNone')) {
+  cartItemsNr.textContent = JSON.parse(localStorage.getItem('cart')).length;
+  cartBadge.classList.replace('displayNone','displayFlex');
+}
