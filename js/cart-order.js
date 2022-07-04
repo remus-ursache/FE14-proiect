@@ -1,7 +1,8 @@
 const cartState = document.getElementById('cartState');
 const products = document.getElementById('products');
 const productTotal = document.getElementById('productTotal');
-const autofillInputs = [...document.querySelectorAll('#infoBuyer input, #infoShipment input')];
+const inputs = [...document.querySelectorAll('#infoBuyer input, #infoShipment input')];
+const payOrderBtn = document.getElementById('payOrderBtn');
 
 
 const displayCartProduct = item => {
@@ -15,6 +16,25 @@ const displayCartProduct = item => {
   `;
   li.innerHTML = liContent;
   products.append(li);
+}
+
+// Show input error message
+function showError(input, message) {
+  const formControl = input.parentElement;
+  formControl.className = 'form-control error';
+  const small = formControl.querySelector('small');
+  small.innerText = message;
+}
+
+// Check required fields
+function checkRequired(inputs) {
+  inputs.forEach(input => {
+    if (input.value.trim() === '') {
+      showError(input, `Campul ${getFieldName(input)} este obligatoriu!`);
+    } else {
+      // showSuccess(input);
+    }
+  });
 }
 
 const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : null;
@@ -39,7 +59,8 @@ if (cart) {
   cartVAT = cartTotal * 0.09;
   orderTotal = cartTotal + cartShipment;
 
-  autofillInputs.forEach(input => input.value = testUser[input.id]);
+  // Autofill checkout inputs
+  inputs.forEach(input => input.value = testUser[input.id]);
   
   products.classList.replace('displayNone','displayBlock');
   cartState.classList.replace('checkout-subtitle-empty-cart','checkout-subtitle');
@@ -49,4 +70,13 @@ if (cart) {
   document.getElementById('cartShipment').textContent = `${cartShipment} Lei`;
   document.getElementById('cartVAT').textContent = `${cartVAT} Lei`;
   document.getElementById('orderTotal').textContent = `${orderTotal} Lei`;
+
+  // Event: order submit
+  payOrderBtn.addEventListener('click', () => {
+    checkRequired(inputs);
+    // checkEmail(email);
+    // checkCardNumber(cardNumber);
+    // checkCardExpire(cardExpire);
+    // checkcardCSV(cardCSV);
+  });
 }
