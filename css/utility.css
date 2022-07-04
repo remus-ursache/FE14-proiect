@@ -41,6 +41,11 @@ ul {
   list-style-type: none;
 }
 
+input:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
 button, input[type="submit"] {
   cursor: pointer;
 }

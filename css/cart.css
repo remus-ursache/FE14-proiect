@@ -45,8 +45,13 @@
 #leftCol ul#infoBuyer, #leftCol ul#infoShipment, #leftCol ul#infoPayment {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 25px;
   align-content: start;
+}
+
+#leftCol li {
+  position: relative;
 }
 
 #infoShiping li:first-child, #infoPayment li:first-child {
@@ -62,10 +67,27 @@
   padding: 5px;
   font-size: 1rem;
   color: var(--primary-75);
+  border: 1px solid var(--primary-75);
+}
+
+#leftCol li.error input {
+  border: 1px solid var(--danger-100);
 }
 
 #leftCol label {
   margin-bottom: 5px;
+}
+
+#leftCol li small {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  color: var(--danger-100);
+  visibility: hidden;
+}
+
+#leftCol li.error small {
+  visibility: visible;
 }
 
 .checkout-container aside#rightCol {
