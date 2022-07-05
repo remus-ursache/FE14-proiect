@@ -39,7 +39,7 @@
   max-width: 520px;
   flex-shrink: 0;
   background: var(--white-100);
-  padding: 20px;
+  padding: 20px 20px 30px;
 }
 
 #leftCol ul#infoBuyer, #leftCol ul#infoShipment, #leftCol ul#infoPayment {
