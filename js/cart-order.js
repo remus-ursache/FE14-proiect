@@ -157,7 +157,6 @@ if (cart) {
   payOrderBtn.addEventListener('click', () => {
     const inputs = [...inputsBuyer, ...inputsShipment, ...inputsPayment];
     if (isValidOrder(inputs)) {
-      // console.log(isValidOrder(inputs));
       localStorage.removeItem('cart');
       window.location.href = 'index.html'
     };

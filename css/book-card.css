@@ -44,15 +44,25 @@
 }
 
 .card-overlay a#viewDetails {
-  border: 1px solid var(--success-100);
-  background-color: var(--primary-100);
+  background: var(--primary-100);
   color: var(--success-100);
   margin-bottom: 2rem;
+  
 }
 
 .card-overlay a#addToCart {
   background: var(--success-100);
   color: var(--light-100);
+}
+
+.card-overlay a#viewDetails, .card-overlay a#addToCart {
+  border: 1px solid var(--success-100);
+  transform: scale(1);
+  transition: transform .2s ease-in-out;
+}
+
+.card-overlay a#viewDetails:hover, .card-overlay a#addToCart:hover {
+  transform: scale(0.95);
 }
 
 .book-card:hover .card-header .card-overlay {
