@@ -22,104 +22,107 @@ const displayCartProduct = item => {
 }
 
 // Functions: validation
-const checkEmail = input => {
+const isValidEmail = input => {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (re.test(input.value.trim())) {
-    showSuccess(input);
+    return showSuccess(input);
   } else {
-    showError(input, 'Adresa de email invalida!');
+    return showError(input, 'Adresa de email invalida!');
   }
 }
 
-const checkPhone = input => {
+const isValidPhone = input => {
   const re = /^0\d{9}$/;
   if (re.test(input.value.trim())) {
-    showSuccess(input);
+    return showSuccess(input);
   } else {
-    showError(input, 'Numar de telefon invalid!');
+    return showError(input, 'Numar de telefon invalid!');
   }
 }
 
-const checkPostalCode = input => {
+const isValidPostalCode = input => {
   const re = /^\d{6}$/;
   if (re.test(input.value.trim())) {
-    showSuccess(input);
+    return showSuccess(input);
   } else {
-    showError(input, 'Cod postal invalid!');
+    return showError(input, 'Cod postal invalid!');
   }
 }
 
-const checkCardNumber = input => {
+const isValidCardNumber = input => {
   const re = /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/;
   if (re.test(input.value.trim())) {
-    showSuccess(input);
+    return showSuccess(input);
   } else {
-    showError(input, 'Numar card invalid!');
+    return showError(input, 'Numar card invalid!');
   }
 }
 
-const checkCardExpire = input => {
+const isValidCardExpire = input => {
   const re = /^(0[1-9]|1[1-2])\/(2[2-9]|[3-9][0-9])$/;
   if (re.test(input.value.trim())) {
-    showSuccess(input);
+    return showSuccess(input);
   } else {
-    showError(input, 'Data expirare invalida!');
+    return showError(input, 'Data expirare invalida!');
   }
 }
 
-const checkCardCSV = input => {
+const isValidCardCSV = input => {
   const re = /^\d{3}$/;
   if (re.test(input.value.trim())) {
-    showSuccess(input);
+    return showSuccess(input);
   } else {
-    showError(input, 'CSV invalid!');
+    return showError(input, 'CSV invalid!');
   }
 }
 
 const showError = (input,msg) => {
   const li = input.parentElement;
-  console.log(input);
   li.classList.add('error');
   const small = input.nextElementSibling;
   small.textContent = msg;
+  return false;
 }
 
 const showSuccess = input => {
   if (input.parentElement.classList.contains('error')) {
     input.parentElement.classList.remove('error');
   }
+  return true;
 }
 
-const checkRequired = inputs => {
+const isValidOrder = inputs => {
+  let isValid = true;
   inputs.forEach(input => {
     if (input.value.trim() === '') {
-      showError(input, `Campul este obligatoriu!`);
+      isValid = showError(input, `Campul este obligatoriu!`);
     } else {
-      showSuccess(input);
+      isValid = showSuccess(input);
       switch (input.id) {
         case 'email':
-          checkEmail(input);
+          isValid = isValidEmail(input);
           break;
         case 'phone':
-          checkPhone(input);
+          isValid = isValidPhone(input);
           break;
         case 'postalCode':
-          checkPostalCode(input);
+          isValid = isValidPostalCode(input);
           break;
         case 'cardNumber':
-        checkCardNumber(input);
+          isValid = isValidCardNumber(input);
           break;
         case 'cardExpire':
-          checkCardExpire(input);
+          isValid = isValidCardExpire(input);
           break;
         case 'cardCSV':
-          checkCardCSV(input);
+          isValid = isValidCardCSV(input);
           break;
         default:
           break;
       }
     }
   });
+  return isValid;
 }
 
 // Display cart
@@ -138,7 +141,6 @@ if (cart) {
   orderTotal = cartTotal + cartShipment;
 
   if (loggedInUser) {
-    console.log(loggedInUser);
     [...inputsBuyer, ...inputsShipment].forEach(input => input.value = testUser[input.id]);
   }
   
@@ -154,6 +156,10 @@ if (cart) {
   // Event: order submit
   payOrderBtn.addEventListener('click', () => {
     const inputs = [...inputsBuyer, ...inputsShipment, ...inputsPayment];
-    checkRequired(inputs);
+    if (isValidOrder(inputs)) {
+      // console.log(isValidOrder(inputs));
+      localStorage.removeItem('cart');
+      window.location.href = 'index.html'
+    };
   });
 }
