@@ -19,9 +19,11 @@ if (isValidSearch(urlQuery) || isValidCategory(urlQuery)) {
   if (type === 'search') {
     searchValue = urlQuery.slice(8).replace(/\%20|\+/g,' ');
     searchInput.value = searchValue;
+    document.querySelector('title').textContent = 'Rezultatele cautarii - Editura UAIC';
   } else {
     searchValue = urlQuery.slice(10).replace(/\%20|\+/g,' ');
     searchInput.value = '';
+    document.querySelector('title').textContent = `${searchValue.charAt(0).toUpperCase() + searchValue.replace(/\_/g,' ').slice(1)} - Editura UAIC`;
   }
   
   const booksBySearch = getBooks(dbBooks,searchValue,0);

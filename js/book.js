@@ -25,6 +25,7 @@ if (isValidId(urlQuery)) {
   const bookId = +urlQuery.slice(4);
   const book = getBook(dbBooks,bookId)[0];
 
+  document.querySelector('title').textContent = `${book.titlu} - Editura UAIC`;
   fullImg.setAttribute('src',`img/${book.id}.jpg`);
 
   thumbnails.forEach(thumbnail => thumbnail.setAttribute('src', `img/${book.id}.jpg`));

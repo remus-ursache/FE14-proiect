@@ -158,7 +158,7 @@ if (cart) {
     const inputs = [...inputsBuyer, ...inputsShipment, ...inputsPayment];
     if (isValidOrder(inputs)) {
       localStorage.removeItem('cart');
-      window.location.href = 'index.html'
+      window.location.href = 'index.html';
     };
   });
 }
