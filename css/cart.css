@@ -30,7 +30,7 @@
 
 .checkout-container .checkout-subtitle {
   font-weight: 300;
-  margin: 0 0 20px;
+  margin: 40px 0 20px;
   color: var(--primary-100);
 }
 
@@ -44,6 +44,10 @@
   flex-shrink: 0;
   background: var(--white-100);
   padding: 20px 20px 30px;
+}
+
+#leftCol .checkout-subtitle:first-of-type {
+  margin: 0 0 20px;
 }
 
 #leftCol ul#infoBuyer, #leftCol ul#infoShipment, #leftCol ul#infoPayment {
