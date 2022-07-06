@@ -60,6 +60,15 @@ if (selectedLink.length) {
   } else {
     selectedLink[0].closest('ul.submenu').previousElementSibling.style.color = 'var(--success-100)';
   }
+} else {
+  if (window.location.pathname === '/book.html' && window.location.search) {
+    const re = /^\?id\=\d{4}$/;
+    if (re.test(window.location.search)) {
+      const id = +window.location.search.split('=')[1];
+      const { domeniu } = dbBooks.find(book => book.id === id);
+      secondaryNavLinks.find(link => link.textContent === domeniu).style.color = 'var(--success-100)';
+    }
+  }
 }
 
 // Display cart
