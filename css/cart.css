@@ -9,24 +9,28 @@
   background: transparent;
 }
 
+#checkout .checkout-title {
+  font-weight: 300;
+  color: var(--success-100);
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 20px;
+  background: var(--white-100);
+}
+
 #checkout .checkout-container {
   display: flex;
   column-gap: 20px;
   align-items: flex-start;
   max-width: 900px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 20px;
   color: var(--primary-100);
-}
-
-.checkout-container .checkout-title {
-  font-weight: 300;
-  color: var(--success-100);
 }
 
 .checkout-container .checkout-subtitle {
   font-weight: 300;
-  margin: 40px 0 20px;
+  margin: 0 0 20px;
   color: var(--primary-100);
 }
 
