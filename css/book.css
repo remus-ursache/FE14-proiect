@@ -57,9 +57,35 @@ section#search {
   cursor: pointer;
 }
 
+#leftCol #tags {
+  display: block;
+  margin-top: 40px;
+  font-size: .85rem;
+}
+
+#leftCol #tags i {
+  margin-right: .2rem;
+  color: var(--success-100);
+}
+
+#leftCol #tags a {
+  margin-right: .5rem;
+  color: var(--primary-75);
+  font-weight: 600;
+  background: var(--light-100);
+  padding: 1px 5px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+#leftCol #tags a:hover {
+  /* color: var(--danger-100); */
+  text-decoration: underline;
+}
+
 #leftCol #infoTitle {
   font-weight: 300;
-  margin: 40px 0 10px;
+  margin: 20px 0 10px;
 }
 
 #leftCol #infoDetails {
