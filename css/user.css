@@ -1,0 +1,91 @@
+@import 'base.css';
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-header, .form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-header{
+  margin-bottom: 40px;
+}
+
+.form-header .form-title {
+  color: var(--dark-100);
+  font-weight: 500;
+}
+
+.form-header .form-logo {
+  color: var(--primary-100);
+  font-size: 1rem;
+}
+
+.form-footer {
+  padding-top: 20px;
+}
+
+#loginForm {
+  width: 500px;
+  background: var(--white-100);
+  padding: 25px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-25);
+  /* box-shadow: 0 0 10px var(--primary-25); */
+}
+
+label, input, a, button {
+  display: block;
+}
+
+label, input {
+  width: 100%;
+  color: var(--dark-100);
+  font-size: 1rem;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  margin-bottom: 20px;
+  padding: .5rem;
+  border: 1px solid var(--primary-50);
+  border-radius: 3px;
+}
+
+ #login, #register {
+  width: 48.5%;
+  padding: .5rem;
+  border-radius: 3px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.active {
+  border: 1px solid var(--success-100);
+  background: var(--success-100);
+  color: var(--white-100);
+}
+
+.active:hover {
+  background: var(--success-dark-100);
+}
+
+.inactive {
+  border: 1px solid var(--light-100);
+  background: var(--light-100);
+  color: var(--dark-100);
+}
+
+.inactive:hover {
+  background: var(--secondary-25);
+}

@@ -1,4 +1,4 @@
-@import 'utility.css';
+@import 'base.css';
 @import 'top-nav.css';
 
 #secondaryNav {
@@ -62,7 +62,7 @@
   position: relative;
 }
 
-#infoShiping li:first-child, #infoPayment li:first-child {
+#infoShipment li:first-child, #infoPayment li:first-child {
   grid-column: 1 / span 2;
 }
 
