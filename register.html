@@ -11,31 +11,48 @@
 <body>
   
   <div class="form-container">
-    <form action="" id="loginForm">
+    <form action="" id="registerForm">
       <div class="form-header">
         <h2 class="form-title">Creeaza un cont</h2>
-        <a href="index.html" class="form-logo">
-          <i class="fa-solid fa-book-open fa-xl"></i>
-          Editura UAIC
+        <a href="/" class="form-logo">
+          Intoarcete-te la site
         </a>
       </div>
-      <label for="email">Nume</label>
-      <input type="text" id="lastname" />
-      <label for="email">Prenume</label>
-      <input type="text" id="firstname" />
-      <label for="email">Adresa de email</label>
-      <input type="text" id="email" />
-      <label for="password">Parola</label>
-      <input type="password" id="password" />
-      <label for="password">Confirmare parola</label>
-      <input type="password" id="password2" />
+      <div id="alert" class="alert"></div>
+      <ul>
+        <li>
+          <label for="firstname">Prenume</label>
+          <input type="text" id="firstname" />
+          <small></small>
+        </li>
+        <li>
+          <label for="lastname">Nume</label>
+          <input type="text" id="lastname" />
+          <small></small>
+        </li>
+        <li>
+          <label for="email">Adresa de email</label>
+          <input type="text" id="email" />
+          <small></small>
+        </li>
+        <li>
+          <label for="password">Parola</label>
+          <input type="password" id="password" />
+          <small></small>
+        </li>
+        <li>
+          <label for="password">Confirmare parola</label>
+          <input type="password" id="password2" />
+          <small></small>
+        </li>
+      </ul>
       <div class="form-footer">
-        <input type="button" id="login" class="inactive" value="Autentificare" />
-        <input type="button" id="register" class="active" value="Inregistrare" />
+        <input type="button" id="loginBtn" class="inactive" value="Autentificare" />
+        <input type="button" id="registerBtn" class="active" value="Inregistrare" />
       </div>
     </form>
   </div>
 
-  <script src=""></script>
+  <script src="js/register.js"></script>
 </body>
 </html>
