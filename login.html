@@ -14,15 +14,23 @@
     <form action="" id="loginForm">
       <div class="form-header">
         <h2 class="form-title">Intra in cont</h2>
-        <a href="index.html" class="form-logo">
-          <i class="fa-solid fa-book-open fa-xl"></i>
-          Editura UAIC
+        <a href="/" class="form-logo">
+          Intoarcete-te la site
         </a>
       </div>
-      <label for="email">Adresa de email</label>
-      <input type="text" id="email" />
-      <label for="password">Parola</label>
-      <input type="password" id="password" />
+      <div id="alert" class="alert"></div>
+      <ul>
+        <li>
+          <label for="email">Adresa de email</label>
+          <input type="text" id="email" />
+          <small></small>
+        </li>
+        <li>
+          <label for="password">Parola</label>
+          <input type="password" id="password" />
+          <small></small>
+        </li>
+      </ul>
       <div class="form-footer">
         <input type="button" id="loginBtn" class="active" value="Autentificare" />
         <input type="button" id="registerBtn" class="inactive" value="Inregistrare" />
@@ -30,6 +38,6 @@
     </form>
   </div>
 
-  <script src=""></script>
+  <script src="js/login.js"></script>
 </body>
 </html>

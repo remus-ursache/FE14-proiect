@@ -10,7 +10,7 @@ const isValidEmail = (input,users) => {
   if (!re.test(input.value.trim())) {
     return showError(input, 'Adresa de email invalida!');
   } else {
-    const userExist = users.find(user => user.email === document.getElementById('email').value.trim());
+    const userExist = users.find(user => user.email === input.value.trim());
     if (userExist) {
       return showError(input, 'Adresa de email exista in baza de date!');
     } else {
