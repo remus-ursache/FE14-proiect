@@ -13,6 +13,9 @@
 #mainNav a, footer a, footer span {
   color: var(--primary-light-100);
   font-size: 1rem;
+}
+
+#mainNav a.logo, #mainNav a#userNavCart, footer a, footer span {
   display: inline-block;
 }
 

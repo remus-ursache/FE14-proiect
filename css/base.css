@@ -90,3 +90,7 @@ section#main {
 .displayBlock {
   display: block;
 }
+
+.displayInlineBlock {
+  display: inline-block;
+}

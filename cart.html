@@ -20,20 +20,29 @@
             Editura UAIC
           </a>
           <div class="userNav">
-            <a href="cart.html">
+            <a href="cart.html" id="userNavCart">
               <span class="displayNone" id="cartBadge">
                 <strong id="cartItemsNr"></strong>
               </span>
               <i class="fa-solid fa-cart-shopping"></i>
               Cosul meu
             </a>
-            <a href="register.html">
+            <a href="register.html" id="userNavRegister" class="displayInlineBlock">
               <i class="fa-solid fa-user-pen"></i>
               Inregistrare
             </a>
-            <a href="login.html">
+            <a href="login.html" id="userNavLogin" class="displayInlineBlock">
               <i class="fa-solid fa-right-to-bracket"></i>
               Contul meu
+            </a>
+            <a href="#" id="userNavAvatar" class="displayNone">
+              <i class="fa-solid fa-circle-user"></i>
+              Salut,&nbsp;
+              <span></span>
+            </a>
+            <a href="#" id="userNavLogout" class="displayNone">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Iesi din cont
             </a>
           </div>
         </div>
@@ -157,6 +166,7 @@
   </div>
 
   <script src="js/db.js"></script>
+  <script src="js/user-nav.js"></script>
   <script src="js/secondaryNav.js"></script>
   <script src="js/footer.js"></script>
   <script src="js/cart-order.js"></script>

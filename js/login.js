@@ -67,7 +67,7 @@ loginBtn.addEventListener('click', () => {
   if (isValidLogin(inputs,users)) {
     const {firstname,id} = users.find(user => user.email === email.value.trim() && user.password === password.value.trim());
     localStorage.setItem('loggedInUser',JSON.stringify({firstname,id}));
-    window.location.href = '/'
+    window.location.href = '/';
   }
 });
 
