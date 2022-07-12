@@ -2,6 +2,8 @@
 const cartState = document.getElementById('cartState');
 const products = document.getElementById('products');
 const productTotal = document.getElementById('productTotal');
+const buyerName = document.getElementById('name');
+const buyerEmail = document.getElementById('email');
 const inputsBuyer = [...document.querySelectorAll('#infoBuyer input')];
 const inputsShipment = [...document.querySelectorAll('#infoShipment input')];
 const inputsPayment = [...document.querySelectorAll('#infoPayment input')];
@@ -141,7 +143,12 @@ if (cart) {
   orderTotal = cartTotal + cartShipment;
 
   if (loggedInUser) {
-    [...inputsBuyer, ...inputsShipment].forEach(input => input.value = testUser[input.id]);
+    const users = JSON.parse(localStorage.getItem('users'));
+    const user = users.find(user => user.id === loggedInUser.id);
+    const autofillInputs = [...document.querySelectorAll('#infoBuyer input, #infoShipment input:not(input[id="phone"])')];
+    autofillInputs.forEach(input => {
+      input.value = (input.id === 'name') ? `${user.lastname} ${user.firstname}` : input.value = user[input.id];
+    });
   }
   
   products.classList.replace('displayNone','displayBlock');

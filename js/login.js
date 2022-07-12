@@ -3,21 +3,21 @@ const registerBtn = document.getElementById('registerBtn');
 const loginForm = document.getElementById('loginForm');
 
 // Functions: validation
-const isValidEmail = (input,users) => {
-  const userExist = users.find(user => user.email === input.value.trim());
+const isValidEmail = (email,users) => {
+  const userExist = users.find(user => user.email === email.value.trim());
   if (userExist) {
-    return showSuccess(input);
+    return showSuccess(email);
   } else {
-    return showError(input, 'Adresa de email nu exista in baza de date!');
+    return showError(email, 'Adresa de email nu exista in baza de date!');
   }
 }
 
-const isValidPassword = (input,users) => {
-  const userExist = users.find(user => user.password === input.value.trim());
+const isValidPassword = (email,password,users) => {
+  const userExist = users.find(user => user.email === email.value.trim() && user.password === password.value.trim());
   if (userExist) {
-    return showSuccess(input);
+    return showSuccess(password);
   } else {
-    return showError(input, 'Parola este incorecta!');
+    return showError(password, 'Parola este incorecta!');
   }
 }
 
@@ -38,17 +38,17 @@ const showSuccess = input => {
 
 const isValidLogin = (inputs,users) => {
   let isValid = true;
-  inputs.forEach(input => {
-    if (input.value.trim() === '') {
-      isValid = showError(input, `Campul este obligatoriu!`);
+  Object.keys(inputs).forEach(key => {
+    if (inputs[key].value.trim() === '') {
+      isValid = showError(inputs[key], `Campul este obligatoriu!`);
     } else {
-      isValid = showSuccess(input);
-      switch (input.id) {
+      isValid = showSuccess(inputs[key]);
+      switch (key) {
         case 'email':
-          isValid = isValidEmail(input,users);
+          isValid = isValidEmail(inputs.email,users);
           break;
         case 'password':
-          isValid = isValidPassword(input,users);
+          isValid = isValidPassword(inputs.email,inputs.password,users);
           break;
         default:
           break;
@@ -58,11 +58,20 @@ const isValidLogin = (inputs,users) => {
   return isValid;
 }
 
-// Event: register
+// Event: login
 loginBtn.addEventListener('click', () => {
-  const inputs = [...loginForm.querySelectorAll('input:not(input[type=button])')];
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const inputs = {email,password};
   const users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
   if (isValidLogin(inputs,users)) {
+    const {firstname,id} = users.find(user => user.email === email.value.trim() && user.password === password.value.trim());
+    localStorage.setItem('loggedInUser',JSON.stringify({firstname,id}));
     window.location.href = '/'
   }
+});
+
+// Event: register
+registerBtn.addEventListener('click', () => {
+  window.location.href = '/register.html';
 });

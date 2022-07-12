@@ -36,6 +36,15 @@ const isValidPasswordsConfirm = (input1, input2) => {
   }
 }
 
+const isValidPostalCode = input => {
+  const re = /^\d{6}$/;
+  if (re.test(input.value.trim())) {
+    return showSuccess(input);
+  } else {
+    return showError(input, 'Cod postal invalid!');
+  }
+}
+
 const showError = (input,msg) => {
   const li = input.parentElement;
   li.classList.add('error');
@@ -68,6 +77,9 @@ const isValidRegister = (inputs,users) => {
         case 'password2':
           isValid = isValidPasswordsConfirm(password,input);
           break;
+        case 'postalCode':
+        isValid = isValidPostalCode(input);
+        break;
         default:
           break;
       }
@@ -81,7 +93,11 @@ const user = {
   lastname: '',
   firstname: '',
   email: '',
-  password: ''
+  password: '',
+  address: '',
+  city: '',
+  county: '',
+  postalCode: ''
 }
 
 // Event: register
@@ -101,3 +117,8 @@ registerBtn.addEventListener('click', () => {
 
 // Event: hide alert
 registerForm.addEventListener('keyup', () => alert.className = 'alert');
+
+// Event: login
+loginBtn.addEventListener('click', () => {
+  window.location.href = '/login.html';
+});
