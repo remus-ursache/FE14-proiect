@@ -15,6 +15,7 @@ section#search {
   display: flex;
   column-gap: 20px;
   align-items: flex-start;
+  min-height: 100vh;
 }
 
 .books-list-container aside#leftCol {

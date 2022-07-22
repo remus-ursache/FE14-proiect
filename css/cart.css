@@ -9,6 +9,10 @@
   background: transparent;
 }
 
+#checkout {
+  min-height: 100vh;
+}
+
 #checkout .checkout-title {
   font-weight: 300;
   color: var(--success-100);
@@ -19,7 +23,6 @@
 }
 
 #checkout .checkout-container {
-  display: flex;
   column-gap: 20px;
   align-items: flex-start;
   max-width: 900px;

@@ -1,4 +1,6 @@
 //UI Elements
+const checkoutContainer = document.querySelector('#checkout .checkout-container');
+const checkoutTitle = document.querySelector('#checkout .checkout-title');
 const cartState = document.getElementById('cartState');
 const products = document.getElementById('products');
 const productTotal = document.getElementById('productTotal');
@@ -157,7 +159,7 @@ if (cart) {
   cart.forEach(item => displayCartProduct(item));
   document.getElementById('cartTotal').textContent = `${cartTotal} Lei`;
   document.getElementById('cartShipment').textContent = `${cartShipment} Lei`;
-  document.getElementById('cartVAT').textContent = `${cartVAT} Lei`;
+  document.getElementById('cartVAT').textContent = `${cartVAT.toFixed(2)} Lei`;
   document.getElementById('orderTotal').textContent = `${orderTotal} Lei`;
 
   // Event: order submit
@@ -165,7 +167,12 @@ if (cart) {
     const inputs = [...inputsBuyer, ...inputsShipment, ...inputsPayment];
     if (isValidOrder(inputs)) {
       localStorage.removeItem('cart');
-      window.location.href = 'index.html';
+      checkoutContainer.classList.replace('displayFlex','displayNone');
+      checkoutTitle.textContent = 'Comanda dvs a inregistrata cu succes!';
+      window.scrollTo(0,0);
+      if (!localStorage.getItem('cart') && document.getElementById('cartBadge').classList.contains('displayFlex')) {
+        cartBadge.classList.replace('displayFlex','displayNone');
+      }
     };
   });
 }
