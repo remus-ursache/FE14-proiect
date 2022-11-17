@@ -6,4 +6,4 @@ const loadDbToLocal = async () => {
 loadDbToLocal();
 
 // get DB from LocalStorage
-const dbBooks = JSON.parse(localStorage.getItem('books'));
+// const dbBooks = JSON.parse(localStorage.getItem('books'));

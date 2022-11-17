@@ -1,3 +1,6 @@
+// get DB from LocalStorage
+const dbBooks = JSON.parse(localStorage.getItem('books'));
+
 const secondaryNavMenuContainer = document.querySelector('#secondaryNav ul.menu');
 
 const secondaryNav = [
