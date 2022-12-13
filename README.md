@@ -1,5 +1,5 @@
 # Editura UAIC - Online Book Store
-> Graduation project for the Wantsome Frontend programming course.
+> Graduation project for the Wantsome Frontend developer course.
 
 ## Table of Contents
 * [Structure and Features](#structure-and-features)
