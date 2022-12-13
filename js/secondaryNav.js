@@ -1,5 +1,5 @@
 // get DB from LocalStorage
-const dbBooks = JSON.parse(localStorage.getItem('books'));
+// const dbBooks = JSON.parse(localStorage.getItem('books'));
 
 const secondaryNavMenuContainer = document.querySelector('#secondaryNav ul.menu');
 
@@ -25,17 +25,17 @@ const getSecondaryNavMenuItems = (menu,books) => {
   return items;
 }
 
-const displaySecondaryNavMenu = menu => {
+const displaySecondaryNavMenu = (menu,books) => {
   const menuLi = document.createElement('li');
   const headerLink = `<a href="#">${menu.header}</a>`;
   menuLi.innerHTML = headerLink;
-  const itemsUl = displaySecondaryNavMenuItems(menu);
+  const itemsUl = displaySecondaryNavMenuItems(menu,books);
   menuLi.append(itemsUl);
   secondaryNavMenuContainer.append(menuLi);
 }
 
-const displaySecondaryNavMenuItems = menu => {
-  menu.items = getSecondaryNavMenuItems(menu,dbBooks);
+const displaySecondaryNavMenuItems = (menu,books) => {
+  menu.items = getSecondaryNavMenuItems(menu,books);
   const itemsUl = document.createElement('ul');
   itemsUl.classList.add('submenu');
   menu.items.forEach(item => {
@@ -53,26 +53,28 @@ const displaySecondaryNavMenuItems = menu => {
   return itemsUl;
 }
 
-secondaryNav.forEach(menu => displaySecondaryNavMenu(menu));
+fetchBooks().then(books => {
+  secondaryNav.forEach(menu => displaySecondaryNavMenu(menu,books));
 
-const secondaryNavLinks = [...document.querySelectorAll('#secondaryNav a')];
-const selectedLink = secondaryNavLinks.filter(link => this.location.href === link.href);
-if (selectedLink.length) {
-  if (selectedLink[0].closest('ul.submenu') === null) {
-    selectedLink[0].style.color = 'var(--success-100)';
+  const secondaryNavLinks = [...document.querySelectorAll('#secondaryNav a')];
+  const selectedLink = secondaryNavLinks.filter(link => this.location.href === link.href);
+  if (selectedLink.length) {
+    if (selectedLink[0].closest('ul.submenu') === null) {
+      selectedLink[0].style.color = 'var(--success-100)';
+    } else {
+      selectedLink[0].closest('ul.submenu').previousElementSibling.style.color = 'var(--success-100)';
+    }
   } else {
-    selectedLink[0].closest('ul.submenu').previousElementSibling.style.color = 'var(--success-100)';
-  }
-} else {
-  if (window.location.pathname === '/book.html' && window.location.search) {
-    const re = /^\?id\=\d{4}$/;
-    if (re.test(window.location.search)) {
-      const id = +window.location.search.split('=')[1];
-      const { domeniu } = dbBooks.find(book => book.id === id);
-      secondaryNavLinks.find(link => link.textContent === domeniu).style.color = 'var(--success-100)';
+    if (window.location.pathname === '/book.html' && window.location.search) {
+      const re = /^\?id\=\d{4}$/;
+      if (re.test(window.location.search)) {
+        const id = +window.location.search.split('=')[1];
+        const { domeniu } = books.find(book => book.id === id);
+        secondaryNavLinks.find(link => link.textContent === domeniu).style.color = 'var(--success-100)';
+      }
     }
   }
-}
+});
 
 // Display cart
 if (localStorage.getItem('cart') && document.getElementById('cartBadge').classList.contains('displayNone')) {

@@ -10,18 +10,21 @@ document.body.addEventListener('click', e => {
     const addToCart = e.target;
     const cantitate = document.getElementById('bookQuantity') ? bookQuantity.textContent : 1;
     const id = +addToCart.dataset.id;
-    const { titlu, pret } = dbBooks.find(book => book.id === id);
-    const product = { id, titlu, cantitate, pret };
-    if (localStorage.getItem('cart')) {
-      cart = JSON.parse(localStorage.getItem('cart'));
-    }
-    if (!cart.find(product => product.id === id)) {
-      cart.push(product);
-      cartItemsNr.textContent = cart.length;
-      if (cartBadge.classList.contains('displayNone')) {
-        cartBadge.classList.replace('displayNone','displayFlex');
+    fetchBooks().then(books => {
+      const { titlu, pret } = books.find(book => book.id === id);
+      const product = { id, titlu, cantitate, pret };
+      console.log(titlu);
+      if (localStorage.getItem('cart')) {
+        cart = JSON.parse(localStorage.getItem('cart'));
       }
-      localStorage.setItem('cart', JSON.stringify(cart));
-    }
+      if (!cart.find(product => product.id === id)) {
+        cart.push(product);
+        cartItemsNr.textContent = cart.length;
+        if (cartBadge.classList.contains('displayNone')) {
+          cartBadge.classList.replace('displayNone','displayFlex');
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+    });
   }
 });

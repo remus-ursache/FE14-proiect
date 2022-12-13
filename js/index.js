@@ -69,6 +69,8 @@ carouselRightBtn.addEventListener('click', () => {
 });
 
 // Books
-dbBooks
-  .sort((a,b) => b.id - a.id)
-  .forEach((book,index) => (index < 9) ? displayBook(book) : null);
+fetchBooks().then(books => {
+  books
+    .sort((a,b) => b.id - a.id)
+    .forEach((book,index) => (index < 9) ? displayBook(book) : null);
+});
