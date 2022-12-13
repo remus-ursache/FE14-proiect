@@ -41,4 +41,4 @@
 - Use with Apache web server or Visual Studio Code + Live Server extension (or similar). 
 
 ## Contact
-Created by [Remus Ursache / remus.ursache@dcsoft.ro] - Feel free to contact me!
+Created by Remus Ursache [remus.ursache@dcsoft.ro] - Feel free to contact me!
